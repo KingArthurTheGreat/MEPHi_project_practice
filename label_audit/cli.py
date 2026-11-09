@@ -2,6 +2,7 @@ import argparse
 import json
 from pathlib import Path
 
+from .config import load_env
 from .evaluation import evaluate_project
 from .models import load_taxonomy, parse_csv
 from .pipeline import apply_feedback, run_audit, save_run
@@ -35,6 +36,7 @@ def main():
     serve.add_argument("--open", action="store_true")
     args = parser.parse_args()
     try:
+        load_env(root / ".env")
         if args.command == "serve":
             from .server import serve
             serve(root, args.port, args.open)

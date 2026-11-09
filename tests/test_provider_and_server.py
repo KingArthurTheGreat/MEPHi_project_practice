@@ -1,3 +1,4 @@
+import io
 import json
 import os
 import tempfile
@@ -9,7 +10,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from unittest.mock import patch
 
-from label_audit.provider import BudgetExceeded, OpenAICompatibleProvider, ProviderError
+from label_audit.provider import BudgetExceeded, OpenAICompatibleProvider, ProviderError, RateLimitExceeded, retry_delay
 from label_audit.server import make_server
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -81,6 +82,99 @@ class ProviderTests(unittest.TestCase):
             with self.assertRaises(ProviderError):
                 OpenAICompatibleProvider(Path(self.tmp.name))
 
+    def test_openrouter_reasoning_setting_is_sent_and_part_of_cache_key(self):
+        response = {"model": "actual-model", "choices": [{"finish_reason": "stop", "message": {"content": '{"ok":true}'}}]}
+        requests = []
+
+        def respond(req, **kwargs):
+            requests.append(json.loads(req.data))
+            return io.BytesIO(json.dumps(response).encode())
+
+        with patch.dict(os.environ, {"LLM_BASE_URL": "https://openrouter.ai/api/v1", "LLM_REASONING_EFFORT": "none"}), \
+                patch("label_audit.provider.urllib.request.urlopen", side_effect=respond):
+            p = OpenAICompatibleProvider(Path(self.tmp.name))
+            self.assertEqual(p.ask("instruction", {}), {"ok": True})
+            self.assertEqual(requests[0]["reasoning"], {"effort": "none"})
+            with patch.dict(os.environ, {"LLM_REASONING_EFFORT": "low"}):
+                OpenAICompatibleProvider(Path(self.tmp.name)).ask("instruction", {})
+            self.assertEqual(len(requests), 2)
+        self.assertTrue(all(json.loads(f.read_text())["actual_model"] == "actual-model"
+                            for f in Path(self.tmp.name).glob("*.json")))
+
+    def test_truncated_or_filtered_responses_are_distinguished_and_not_cached(self):
+        for finish, message in [("length", "исчерпан лимит"), ("content_filter", "фильтром"), ("tool_calls", "без итогового JSON")]:
+            with self.subTest(finish=finish):
+                response = {"choices": [{"finish_reason": finish, "message": {"content": '{"ok":true}'}}],
+                            "usage": {"prompt_tokens": 10, "completion_tokens": 20}}
+                with patch("label_audit.provider.urllib.request.urlopen", return_value=io.BytesIO(json.dumps(response).encode())):
+                    p = OpenAICompatibleProvider(Path(self.tmp.name))
+                    with self.assertRaisesRegex(ProviderError, message):
+                        p.ask("instruction", {})
+                self.assertEqual(p.calls, 1)
+                self.assertEqual(p.output_tokens, 20)
+                self.assertEqual(list(Path(self.tmp.name).glob("*.json")), [])
+
+    def test_reasoning_setting_rejects_unsupported_provider_or_value(self):
+        with patch.dict(os.environ, {"LLM_REASONING_EFFORT": "none"}):
+            with self.assertRaisesRegex(ProviderError, "только для OpenRouter"):
+                OpenAICompatibleProvider(Path(self.tmp.name))
+        with patch.dict(os.environ, {"LLM_BASE_URL": "https://openrouter.ai/api/v1", "LLM_REASONING_EFFORT": "invalid"}):
+            with self.assertRaisesRegex(ProviderError, "Некорректный LLM_REASONING_EFFORT"):
+                OpenAICompatibleProvider(Path(self.tmp.name))
+
+    def test_daily_quota_is_not_retried_and_raw_error_is_hidden(self):
+        error = {"error": {"message": "test-secret", "metadata": {"limit_source": "openrouter_free_tier_daily"}}}
+        failure = urllib.error.HTTPError("https://api.example", 429, "Limited", {}, io.BytesIO(json.dumps(error).encode()))
+        with patch("label_audit.provider.urllib.request.urlopen", side_effect=failure) as send, \
+                patch("label_audit.provider.time.sleep") as sleep:
+            p = OpenAICompatibleProvider(Path(self.tmp.name))
+            with self.assertRaisesRegex(RateLimitExceeded, "суточный лимит") as raised:
+                p.ask("instruction", {})
+        self.assertNotIn("test-secret", str(raised.exception))
+        self.assertEqual(send.call_count, 1)
+        sleep.assert_not_called()
+        self.assertEqual(list(Path(self.tmp.name).glob("*.json")), [])
+
+    def test_temporary_rate_limit_respects_retry_after(self):
+        failure = urllib.error.HTTPError("https://api.example", 429, "Limited", {"Retry-After": "12"}, io.BytesIO(b'{}'))
+        success = {"choices": [{"finish_reason": "stop", "message": {"content": '{"ok":true}'}}]}
+        with patch("label_audit.provider.urllib.request.urlopen", side_effect=[failure, io.BytesIO(json.dumps(success).encode())]), \
+                patch("label_audit.provider.time.sleep") as sleep:
+            p = OpenAICompatibleProvider(Path(self.tmp.name))
+            self.assertEqual(p.ask("instruction", {}), {"ok": True})
+        sleep.assert_called_once_with(12)
+        self.assertEqual(p.calls, 2)
+
+    def test_long_rate_limit_does_not_wait_or_retry(self):
+        failure = urllib.error.HTTPError("https://api.example", 429, "Limited", {"Retry-After": "3600"}, io.BytesIO(b'not json'))
+        with patch("label_audit.provider.urllib.request.urlopen", side_effect=failure) as send, \
+                patch("label_audit.provider.time.sleep") as sleep:
+            with self.assertRaisesRegex(RateLimitExceeded, "3600 сек"):
+                OpenAICompatibleProvider(Path(self.tmp.name)).ask("instruction", {})
+        self.assertEqual(send.call_count, 1)
+        sleep.assert_not_called()
+
+    def test_pacing_applies_to_requests_but_not_cache_hits(self):
+        response = {"choices": [{"finish_reason": "stop", "message": {"content": '{"ok":true}'}}]}
+        with patch.dict(os.environ, {"LLM_REQUEST_INTERVAL": "3.1"}), \
+                patch("label_audit.provider.time.monotonic", return_value=100), \
+                patch("label_audit.provider.time.sleep") as sleep, \
+                patch("label_audit.provider.urllib.request.urlopen", side_effect=lambda *a, **kw: io.BytesIO(json.dumps(response).encode())):
+            p = OpenAICompatibleProvider(Path(self.tmp.name))
+            p.ask("instruction", {"version": 1})
+            p.ask("instruction", {"version": 1})
+            sleep.assert_not_called()
+            p.ask("instruction", {"version": 2})
+            self.assertAlmostEqual(sleep.call_args.args[0], 3.1)
+        self.assertEqual(p.calls, 2)
+        self.assertEqual(p.cache_hits, 1)
+
+    def test_retry_after_handles_date_invalid_and_nonfinite_values(self):
+        with patch("label_audit.provider.time.time", return_value=0):
+            self.assertEqual(retry_delay({"Retry-After": "Thu, 01 Jan 1970 00:00:20 GMT"}), 20)
+        for value in ("invalid", "NaN", "inf"):
+            self.assertEqual(retry_delay({"Retry-After": value}), 5)
+
 
 class WebTests(unittest.TestCase):
     @classmethod
@@ -128,6 +222,13 @@ class WebTests(unittest.TestCase):
         with self.assertRaises(urllib.error.HTTPError) as ctx:
             self.request("/api/audit", {"csv": "broken", "mode": "demo"})
         self.assertEqual(ctx.exception.code, 400)
+
+    def test_rate_limit_is_reported_as_http_429(self):
+        with patch("label_audit.server.run_audit", side_effect=RateLimitExceeded("Исчерпан суточный лимит")):
+            with self.assertRaises(urllib.error.HTTPError) as caught:
+                self.request("/api/audit", {"csv": "id,text,label\na,Не могу войти,account\n", "mode": "demo"})
+        self.assertEqual(caught.exception.code, 429)
+        self.assertIn("суточный лимит", json.load(caught.exception)["error"])
 
 
 if __name__ == "__main__":
