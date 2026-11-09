@@ -9,12 +9,14 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse
 
+from .config import load_env
 from .models import load_taxonomy, parse_csv
 from .pipeline import apply_feedback, csv_content, run_audit, save_run
-from .provider import DemoProvider, OpenAICompatibleProvider
+from .provider import DemoProvider, OpenAICompatibleProvider, RateLimitExceeded
 
 
 def make_server(root: Path, port=8765):
+    load_env(root / ".env")
     taxonomy = load_taxonomy(root / "data/taxonomy.json")
     state = {"run": None, "path": None}
     lock = threading.Lock()
@@ -100,6 +102,8 @@ def make_server(root: Path, port=8765):
                         self.send(404, {"error": "Не найдено."})
                         return
                     self.send(200, state["run"])
+            except RateLimitExceeded as exc:
+                self.send(429, {"error": str(exc)})
             except (ValueError, RuntimeError, OSError, TypeError) as exc:
                 self.send(400, {"error": str(exc)})
 
