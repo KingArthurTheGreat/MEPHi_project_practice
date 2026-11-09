@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Метка под вопросом · edinaya rossiya</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><a class="brand" href="/">м<span>?</span> / Метка под вопросом</a><span class="team">edinaya rossiya · КП2</span></header>
+<main>
+<section class="intro"><div><p class="eyebrow">АУДИТ ТЕКСТОВОЙ РАЗМЕТКИ</p><h1>Каждой метке —<br>проверяемое основание.</h1><p class="lead">Пять агентов находят спорные обращения.<br>Вы решаете, какие метки оставить и изменить.</p></div><aside class="intro-note"><span class="number">05</span><p>агентов с отдельными задачами</p><div class="agents-mini">Инструкция → Смысл → Согласованность<br>Арбитраж → Очередь проверки</div></aside></section>
+<section class="input-area" aria-labelledby="data-title"><div><h2 id="data-title">Данные для проверки</h2><p id="file-name">Загружаем учебный пример…</p><p class="muted">CSV: id, text, label · до 500 строк</p></div><div class="controls"><label class="upload" for="csv-file">Выбрать CSV<input id="csv-file" type="file" accept=".csv,text/csv"></label><button id="demo" class="secondary">Учебный пример</button><label class="field">Режим<select id="mode"><option value="demo">Демо без LLM</option><option value="llm">Подключённая LLM</option></select></label><label class="field small">Бюджет<input id="budget" type="number" min="1" max="500" value="20"></label><button id="run" class="primary">Проверить разметку <span>↗</span></button></div></section>
+<div id="disclosure" class="notice">Демо использует эвристики и синтетические обращения. Результаты не измеряют качество LLM.</div>
+<p id="error" class="error" role="alert" hidden></p><p id="progress" class="progress" role="status" hidden></p>
+<section id="results" hidden>
+<div class="summary"><div><span id="total" class="stat">0</span><span>обращений</span></div><div><span id="candidates" class="stat">0</span><span>кандидатов на проверку</span></div><div><span id="queued" class="stat accent">0</span><span>в текущей очереди</span></div><div><span id="reviewed" class="stat">0</span><span>подтверждено человеком</span></div><div class="exports"><a href="/api/export">Рекомендации ↓</a><a href="/api/reviewed">CSV с вашими решениями ↓</a></div></div>
+<div class="workspace"><section class="queue-pane"><div class="section-bar"><h2>Очередь проверки</h2><select id="filter" aria-label="Фильтр обращений"><option value="queue">Текущая очередь</option><option value="all">Все обращения</option><option value="change">Предложено изменение</option><option value="review">Нужен разбор</option><option value="human">Проверено человеком</option></select></div><p id="queue-reason" class="muted"></p><div id="list" class="record-list" role="list"></div></section>
+<aside id="detail" class="detail"><p>Выберите обращение в очереди.</p></aside></div>
+<details class="trace-block"><summary>Журнал работы агентов</summary><p class="muted">Краткие решения и вызовы инструментов. Полный журнал сохраняется вместе с результатом запуска.</p><div id="trace"></div></details>
+</section>
+<section id="empty" class="empty"><span>01 / ЗАГРУЗКА</span><p>Учебный набор уже подготовлен.<br>Нажмите «Проверить разметку», чтобы увидеть очередь.</p></section>
+<footer><span>Исходный CSV сохраняется без изменений.</span><span>Окончательное решение принимает человек.</span></footer>
+</main><script src="/app.js"></script></body></html>
+

@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "label-audit-kp2"
+version = "0.1.0"
+description = "Метка под вопросом: пять агентов проверки текстовой разметки"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+label-audit = "label_audit.cli:main"
+
+[tool.setuptools.package-data]
+label_audit = ["web/*.html", "web/*.js", "web/*.css"]
+
+[tool.setuptools.packages.find]
+include = ["label_audit*"]
+

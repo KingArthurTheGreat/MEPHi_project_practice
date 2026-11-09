@@ -1,0 +1,62 @@
+[
+  {
+    "file": "Лекция_2_Обзор_современных_LLM_моделей_и_способы_локального_запуска (2).pdf",
+    "sha256": "53901abc902cc4418e7515d9ba1996f9c6671ed9516cc8068ca6172dffd86215",
+    "bytes": 2510005
+  },
+  {
+    "file": "Лекция_2_Обзор_современных_LLM_моделей_и_способы_локального_запуска.pdf",
+    "sha256": "53901abc902cc4418e7515d9ba1996f9c6671ed9516cc8068ca6172dffd86215",
+    "bytes": 2510005
+  },
+  {
+    "file": "Лекция_3_Подходы_к_построению_системных_промптов_1_2.pdf",
+    "sha256": "82a9476435c4f2b738ef479450ec7f9a063c082e3dd18b9c633088863f9b67ec",
+    "bytes": 1876004
+  },
+  {
+    "file": "Лекция_3_Подходы_к_построению_системных_промптов_1_21.pdf",
+    "sha256": "82a9476435c4f2b738ef479450ec7f9a063c082e3dd18b9c633088863f9b67ec",
+    "bytes": 1876004
+  },
+  {
+    "file": "Практика_1_1_Colab_&_Python_basics (2).ipynb",
+    "sha256": "6521a6b1460db7374b1b85928277b090af271d66491e416f6af7e0b3c831a9a4",
+    "bytes": 58853
+  },
+  {
+    "file": "Практика_1_1_Colab_&_Python_basics (2)(1).ipynb",
+    "sha256": "6521a6b1460db7374b1b85928277b090af271d66491e416f6af7e0b3c831a9a4",
+    "bytes": 58853
+  },
+  {
+    "file": "Практика_2_1_Запросы_к_API_LLM_Основы_промпт_инжиниринга1_2.ipynb",
+    "sha256": "ff2d2131189ac34c44836a3083ce7f96d30f8e0a3f82b24bb1ccce4daacd7d1d",
+    "bytes": 81593
+  },
+  {
+    "file": "Практика_2_1_Запросы_к_API_LLM_Основы_промпт_инжиниринга1_21.ipynb",
+    "sha256": "ff2d2131189ac34c44836a3083ce7f96d30f8e0a3f82b24bb1ccce4daacd7d1d",
+    "bytes": 81593
+  },
+  {
+    "file": "Практика_3_OpenAI_Python_и_промпт_инжиниринг (2).ipynb",
+    "sha256": "7708448e2c43b5339af5b13070fb8cf65ed79b10ff6856c4acf800f6792b8c4c",
+    "bytes": 46169
+  },
+  {
+    "file": "Практика_3_OpenAI_Python_и_промпт_инжиниринг1.ipynb",
+    "sha256": "7708448e2c43b5339af5b13070fb8cf65ed79b10ff6856c4acf800f6792b8c4c",
+    "bytes": 46169
+  },
+  {
+    "file": "KP1_multiagent_updated(2).pptx",
+    "sha256": "d339fe971446731bba128e6e23fd9c97794a8c4b2dcbdcf24ce55a867a448e98",
+    "bytes": 105908
+  },
+  {
+    "file": "project_options_checked_registry (1).md",
+    "sha256": "7affdbe24bb799a0db5e996beb11d4a762fa8d17dcb9275e49f41e796740984b",
+    "bytes": 47952
+  }
+]
