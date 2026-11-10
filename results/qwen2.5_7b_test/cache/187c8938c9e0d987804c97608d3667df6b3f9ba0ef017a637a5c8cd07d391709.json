@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "recheck",
+    "proposed_label": null,
+    "confidence": 0.8,
+    "reason": "Согласие соседних меток не доказывает их правильность; требуется повторная семантическая проверка."
+  },
+  "usage": {
+    "prompt_tokens": 1320,
+    "prompt_tokens_details": {
+      "cached_tokens": 8
+    },
+    "completion_tokens": 57,
+    "total_tokens": 1377
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

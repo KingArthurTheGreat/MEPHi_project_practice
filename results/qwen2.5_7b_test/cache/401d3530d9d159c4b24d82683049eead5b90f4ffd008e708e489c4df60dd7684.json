@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "payment",
+      "technical"
+    ],
+    "confidence": 0.8,
+    "evidence": "Списание произошло, хотя банк отклонил платеж.",
+    "reason": "Клиент столкнулся с двумя независимыми проблемами:支付失败但仍有扣款，以及应用可能存在的问题。"
+  },
+  "usage": {
+    "prompt_tokens": 954,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 81,
+    "total_tokens": 1035
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

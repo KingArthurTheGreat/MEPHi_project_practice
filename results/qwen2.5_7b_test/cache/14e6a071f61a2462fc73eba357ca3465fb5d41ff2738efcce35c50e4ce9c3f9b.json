@@ -1,0 +1,20 @@
+{
+  "result": {
+    "issues": [
+      "Нет правила для определения payment в случае двойного списания"
+    ],
+    "questions": [
+      "Как обрабатывать случаи, когда клиент упоминает об отмене оплаты при заказе?"
+    ]
+  },
+  "usage": {
+    "prompt_tokens": 891,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens": 51,
+    "total_tokens": 942
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,0 +1,18 @@
+{
+  "result": {
+    "conflict": false,
+    "neighbor_ids": [],
+    "confidence": 0.9,
+    "reason": "Все соседние тексты и метки соответствуют теме аккаунта, нет противоречий."
+  },
+  "usage": {
+    "prompt_tokens": 1156,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 44,
+    "total_tokens": 1200
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -9,7 +9,7 @@ from label_audit.agents.queue import QueueAgent
 from label_audit.agents.semantic import SemanticAgent
 from label_audit.models import Record, load_taxonomy
 from label_audit.pipeline import apply_feedback, run_audit
-from label_audit.provider import DemoProvider
+from label_audit.provider import DemoProvider, InvalidModelResponse, ProviderError, RateLimitExceeded
 from label_audit.retrieval import NeighborIndex
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,8 +42,15 @@ class AgentTests(unittest.TestCase):
         original = copy.deepcopy(self.taxonomy)
         result = InstructionAgent().run(self.taxonomy, self.demo)
         self.assertEqual(self.taxonomy, original)
-        self.assertEqual(result["version"], "1.0.0-kp2")
+        self.assertEqual(result["version"], self.taxonomy["version"])
         self.assertEqual(len(result["sha256"]), 64)
+
+    def test_instruction_model_cannot_override_taxonomy(self):
+        p = ScriptedProvider({"instruction": {"issues": [], "questions": [],
+                            "classes": [], "rules": [], "version": "invented", "sha256": "invented"}})
+        result = InstructionAgent().run(self.taxonomy, p)
+        for key in ("classes", "rules", "version", "sha256"):
+            self.assertEqual(result[key], self.spec[key])
 
     def test_instruction_rejects_duplicate_classes(self):
         self.taxonomy["classes"].append(self.taxonomy["classes"][0])
@@ -127,6 +134,23 @@ class AgentTests(unittest.TestCase):
         self.assertEqual(sum(role == "arbiter" for role, _ in p.calls), 2)
         self.assertEqual(result["findings"][0]["decision"]["action"], "review")
 
+    def test_class_boundaries_reach_all_checking_agents_and_recheck(self):
+        text = "Приложение вылетает при входе."
+        p = ScriptedProvider({
+            "instruction": {"issues": [], "questions": []},
+            "semantic": {"labels": ["account"], "confidence": .9, "evidence": text,
+                         "reason": "Сбой конкретной операции входа", "needs_neighbors": True},
+            "consistency": {"conflict": False, "neighbor_ids": [], "confidence": .5, "reason": "Нет соседей"},
+            "arbiter": {"action": "recheck", "proposed_label": None, "confidence": .4, "reason": "Проверка"},
+            "queue": {"selected_ids": ["a"], "reason": "Проверка"}})
+        run_audit([Record("a", text, "technical")], self.taxonomy, p)
+        for role, payload in p.calls:
+            if role in {"semantic", "consistency", "arbiter"}:
+                with self.subTest(role=role):
+                    self.assertEqual(payload["classes"], self.taxonomy["classes"])
+                    self.assertEqual(payload["rules"], self.taxonomy["rules"])
+        self.assertEqual(sum(role == "semantic" for role, _ in p.calls), 2)
+
     def test_queue_respects_budget_and_reviewed_ids(self):
         rows = [Record(str(i), "Не могу войти", "delivery") for i in range(4)]
         result = run_audit(rows, self.taxonomy, self.demo, budget=2)
@@ -140,6 +164,61 @@ class AgentTests(unittest.TestCase):
         queue = QueueAgent().run(result["findings"], p)
         self.assertEqual(queue["selected_ids"], ["a"])
         self.assertIn("не прошёл проверку", queue["reason"])
+
+    def test_queue_sends_explicit_size_and_accepts_complete_model_selection(self):
+        rows = [Record(str(i), "Не могу войти", "delivery") for i in range(4)]
+        result = run_audit(rows, self.taxonomy, self.demo)
+
+        def select(payload):
+            self.assertEqual(payload["selection_size"], 2)
+            self.assertNotIn("0", [x["id"] for x in payload["candidates"]])
+            return {"selected_ids": [x["id"] for x in payload["candidates"][:2]], "reason": "Выбор модели"}
+
+        queue = QueueAgent().run(result["findings"], ScriptedProvider({"queue": select}), budget=2, reviewed_ids=["0"])
+        self.assertEqual(len(queue["selected_ids"]), 2)
+        self.assertEqual(queue["reason"], "Выбор модели")
+
+    def test_queue_rejects_underfilled_answer(self):
+        rows = [Record(str(i), "Не могу войти", "delivery") for i in range(3)]
+        result = run_audit(rows, self.taxonomy, self.demo)
+        p = ScriptedProvider({"queue": {"selected_ids": ["0"], "reason": "Неполный выбор"}})
+        queue = QueueAgent().run(result["findings"], p, budget=2)
+        self.assertEqual(len(queue["selected_ids"]), 2)
+        self.assertIn("не прошёл проверку", queue["reason"])
+
+    def test_queue_size_is_limited_by_available_candidates(self):
+        result = run_audit([Record("a", "Не могу войти", "delivery")], self.taxonomy, self.demo)
+
+        def select(payload):
+            self.assertEqual(payload["selection_size"], 1)
+            return {"selected_ids": ["a"], "reason": "Единственный кандидат"}
+
+        queue = QueueAgent().run(result["findings"], ScriptedProvider({"queue": select}), budget=20)
+        self.assertEqual(queue["reason"], "Единственный кандидат")
+
+    def test_queue_invalid_response_preserves_findings_and_discloses_local_ordering(self):
+        result = run_audit([Record("a", "Не могу войти", "delivery"),
+                            Record("b", "Не прислали чек", "account")], self.taxonomy, self.demo)
+        original = copy.deepcopy(result["findings"])
+
+        def fail(payload):
+            raise InvalidModelResponse("Агент queue: API вернул пустой ответ (finish_reason=stop).")
+
+        p = ScriptedProvider({"queue": fail})
+        queue = QueueAgent().run(result["findings"], p, budget=1, reviewed_ids=["a"])
+        self.assertEqual(queue["selected_ids"], ["b"])
+        self.assertIn("пустой ответ", queue["reason"])
+        self.assertIn("локальная очередь", queue["reason"])
+        self.assertEqual(result["findings"], original)
+
+    def test_queue_does_not_hide_transport_or_rate_limit_errors(self):
+        result = run_audit([Record("a", "Не могу войти", "delivery")], self.taxonomy, self.demo)
+        for error in (ProviderError("API недоступен"), RateLimitExceeded("HTTP 429")):
+            with self.subTest(error=type(error).__name__):
+                def fail(payload):
+                    raise error
+                with self.assertRaises(type(error)):
+                    QueueAgent().run(result["findings"], ScriptedProvider({"queue": fail}))
 
     def test_feedback_rechecks_group_without_overwriting_source(self):
         rows = [Record("a", "Не могу войти после смены пароля.", "delivery"), Record("b", "Не могу войти после смены пароля.", "account")]

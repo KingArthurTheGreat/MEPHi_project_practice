@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "technical"
+    ],
+    "confidence": 0.8,
+    "evidence": "Карта отклоняется, хотя лимит не превышен.",
+    "reason": "Проблема связана с работой приложения, так как карта отклонена, несмотря на то что лимит превышен.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 958,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 89,
+    "total_tokens": 1047
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "payment"
+    ],
+    "confidence": 0.95,
+    "evidence": "При оплате сняли больше, чем показывала сумма.",
+    "reason": "Клиент жалуется на списание большей суммы, чем ожидалось, что относится к проблеме оплаты.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 957,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 85,
+    "total_tokens": 1042
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

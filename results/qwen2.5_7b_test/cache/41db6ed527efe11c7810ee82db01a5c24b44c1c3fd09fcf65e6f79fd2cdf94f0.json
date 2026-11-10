@@ -1,0 +1,22 @@
+{
+  "result": {
+    "labels": [
+      "payment",
+      "technical"
+    ],
+    "confidence": 0.8,
+    "evidence": "Банк отклонил платеж, но деньги списаны.",
+    "reason": "Проблема с оплатой указана явно, а также есть сбой в приложении, так как списание произошло, несмотря на отказ банка.",
+    "needs_neighbors": true
+  },
+  "usage": {
+    "prompt_tokens": 954,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 93,
+    "total_tokens": 1047
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

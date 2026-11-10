@@ -10,7 +10,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from unittest.mock import patch
 
-from label_audit.provider import BudgetExceeded, OpenAICompatibleProvider, ProviderError, RateLimitExceeded, retry_delay
+from label_audit.provider import BudgetExceeded, InvalidModelResponse, OpenAICompatibleProvider, ProviderError, RateLimitExceeded, PROMPTS, retry_delay
 from label_audit.server import make_server
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -72,6 +72,74 @@ class ProviderTests(unittest.TestCase):
         p.ask("instruction", {"version": 2})
         self.assertEqual(len(self.requests), 2)
 
+    def test_prompt_update_sends_new_system_instruction_and_invalidates_cache(self):
+        p = OpenAICompatibleProvider(Path(self.tmp.name))
+        payload = {"taxonomy": {"classes": []}}
+        p.ask("instruction", payload)
+        updated = PROMPTS["instruction"] + "\nУточненное правило границы классов."
+        with patch.dict(PROMPTS, {"instruction": updated}):
+            p.ask("instruction", payload)
+            p.ask("instruction", payload)
+        self.assertEqual(len(self.requests), 2)
+        self.assertEqual(p.cache_hits, 1)
+        self.assertTrue(self.requests[1]["messages"][0]["content"].startswith(updated))
+        self.assertEqual(json.loads(self.requests[1]["messages"][1]["content"]), payload)
+
+    def test_gigachat_queue_schema_limits_ids_and_count_for_this_request(self):
+        p = OpenAICompatibleProvider(Path(self.tmp.name))
+        payload = {"candidates": [{"id": "a"}, {"id": "b"}], "budget": 1, "selection_size": 1}
+        with patch.object(p, "is_gigachat", True), patch.object(p, "authorization", return_value="test-token"):
+            p.ask("queue", payload)
+            payload = {**payload, "budget": 20, "selection_size": 2}
+            p.ask("queue", payload)
+        self.assertEqual(len(self.requests), 2)
+        for body, count in zip(self.requests, [1, 2]):
+            fmt = body["response_format"]
+            self.assertEqual(fmt["type"], "json_schema")
+            self.assertTrue(fmt["strict"])
+            selected = fmt["schema"]["properties"]["selected_ids"]
+            self.assertEqual(selected["items"], {"type": "string", "enum": ["a", "b"]})
+            self.assertEqual(selected["minItems"], count)
+            self.assertEqual(selected["maxItems"], count)
+
+    def test_gigachat_semantic_schema_bounds_each_generated_field(self):
+        p = OpenAICompatibleProvider(Path(self.tmp.name))
+        payload = {"text": "Не могу подтвердить вход.",
+                   "classes": [{"id": "account"}, {"id": "technical"}], "rules": []}
+        with patch.object(p, "is_gigachat", True), patch.object(p, "authorization", return_value="test-token"):
+            p.ask("semantic", payload)
+        fields = self.requests[0]["response_format"]["schema"]["properties"]
+        self.assertEqual(fields["labels"]["items"]["enum"], ["account", "technical"])
+        self.assertEqual(fields["labels"]["maxItems"], 2)
+        self.assertEqual(fields["evidence"]["maxLength"], len(payload["text"]))
+        self.assertEqual(fields["evidence"]["minLength"], 1)
+        self.assertEqual(fields["reason"]["maxLength"], 320)
+        scores = fields["confidence"]["enum"]
+        self.assertTrue(all(0 <= value <= 1 for value in scores))
+        self.assertIn(0.65, scores)
+        self.assertIn(0, scores)
+        self.assertIn(1, scores)
+        self.assertNotIn("reasoning", self.requests[0])
+
+    def test_length_error_reports_usage_without_claiming_reasoning_or_retrying(self):
+        response = {"choices": [{"finish_reason": "length", "message": {"content": "private-user-text"}}],
+                    "usage": {"prompt_tokens": 2048, "completion_tokens": 8192}}
+        with patch.dict(os.environ, {"LLM_MAX_TOKENS": "8192"}), \
+                patch("label_audit.provider.urllib.request.urlopen", return_value=io.BytesIO(json.dumps(response).encode())) as send:
+            p = OpenAICompatibleProvider(Path(self.tmp.name))
+            with self.assertRaises(ProviderError) as raised:
+                p.ask("semantic", {})
+        message = str(raised.exception)
+        for value in ("Агент semantic", "finish_reason=length", "LLM_MAX_TOKENS=8192",
+                      "входных токенов: 2048", "выходных токенов: 8192"):
+            self.assertIn(value, message)
+        self.assertNotIn("рассужден", message)
+        self.assertNotIn("private-user-text", message)
+        self.assertEqual(send.call_count, 1)
+        self.assertEqual(p.calls, 1)
+        self.assertEqual(p.output_tokens, 8192)
+        self.assertEqual(list(Path(self.tmp.name).glob("*.json")), [])
+
     def test_ollama_uses_its_supported_token_parameter(self):
         with patch.dict(os.environ, {"LLM_BASE_URL": "http://127.0.0.1:11434/v1"}):
             p = OpenAICompatibleProvider(Path(self.tmp.name))
@@ -112,6 +180,35 @@ class ProviderTests(unittest.TestCase):
                         p.ask("instruction", {})
                 self.assertEqual(p.calls, 1)
                 self.assertEqual(p.output_tokens, 20)
+                self.assertEqual(list(Path(self.tmp.name).glob("*.json")), [])
+
+    def test_invalid_model_content_has_safe_role_specific_error_and_is_not_cached(self):
+        for content, message in [("", "пустой ответ"), (" \n", "пустой ответ"),
+                                 (None, "пустой ответ"), ({}, "должно быть строкой"),
+                                 ("[]", "требуется объект"),
+                                 ('{"reason":"private-user-text",}', "некорректный JSON")]:
+            with self.subTest(content=content):
+                response = {"choices": [{"finish_reason": "stop", "message": {"content": content}}],
+                            "usage": {"prompt_tokens": 10, "completion_tokens": 2}}
+                with patch("label_audit.provider.urllib.request.urlopen", return_value=io.BytesIO(json.dumps(response).encode())) as send:
+                    p = OpenAICompatibleProvider(Path(self.tmp.name))
+                    with self.assertRaisesRegex(InvalidModelResponse, message) as raised:
+                        p.ask("queue", {})
+                self.assertIn("Агент queue", str(raised.exception))
+                self.assertNotIn("private-user-text", str(raised.exception))
+                self.assertNotIn("test-secret", str(raised.exception))
+                self.assertEqual(send.call_count, 1)
+                self.assertEqual(p.output_tokens, 2)
+                self.assertEqual(list(Path(self.tmp.name).glob("*.json")), [])
+
+    def test_malformed_envelope_reports_provider_error_without_crashing(self):
+        for response in ([], {}, {"choices": []}, {"choices": [None]},
+                         {"choices": [{"message": None}]}, {"choices": [{}], "usage": []}):
+            with self.subTest(response=response):
+                with patch("label_audit.provider.urllib.request.urlopen", return_value=io.BytesIO(json.dumps(response).encode())):
+                    p = OpenAICompatibleProvider(Path(self.tmp.name))
+                    with self.assertRaisesRegex(InvalidModelResponse, "Агент semantic"):
+                        p.ask("semantic", {})
                 self.assertEqual(list(Path(self.tmp.name).glob("*.json")), [])
 
     def test_reasoning_setting_rejects_unsupported_provider_or_value(self):

@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "keep",
+    "proposed_label": "delivery",
+    "confidence": 0.95,
+    "reason": "Текст явно касается изменения даты доставки, что подтверждается высокой уверенностью текущей метки."
+  },
+  "usage": {
+    "prompt_tokens": 1289,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 52,
+    "total_tokens": 1341
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

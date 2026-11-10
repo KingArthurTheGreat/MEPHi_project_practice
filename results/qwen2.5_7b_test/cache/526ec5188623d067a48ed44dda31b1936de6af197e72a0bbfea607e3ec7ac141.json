@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "keep",
+    "proposed_label": "refund",
+    "confidence": 0.9,
+    "reason": "Зависание приложения и просьба вернуть деньги явно упоминаются, метка согласована с соседними текстами."
+  },
+  "usage": {
+    "prompt_tokens": 1325,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 54,
+    "total_tokens": 1379
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

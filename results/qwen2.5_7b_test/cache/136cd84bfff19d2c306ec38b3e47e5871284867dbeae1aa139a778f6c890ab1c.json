@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "technical"
+    ],
+    "confidence": 0.95,
+    "evidence": "Приложение вылетает при открытии каталога.",
+    "reason": "Ошибка работы приложения, не связанная с оплатой или входом.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 954,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 53,
+    "total_tokens": 1007
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

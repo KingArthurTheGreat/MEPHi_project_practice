@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "review",
+    "proposed_label": null,
+    "confidence": 0.5,
+    "reason": "Запрос не содержит явной информации о проблеме с оплатой, поэтому требует дополнительной проверки."
+  },
+  "usage": {
+    "prompt_tokens": 1301,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 52,
+    "total_tokens": 1353
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

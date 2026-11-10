@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "keep",
+    "proposed_label": "technical",
+    "confidence": 0.95,
+    "reason": "Ошибка работы приложения, не связанная с оплатой или входом, подтверждается текущим текстом и его меткой."
+  },
+  "usage": {
+    "prompt_tokens": 1285,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 50,
+    "total_tokens": 1335
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

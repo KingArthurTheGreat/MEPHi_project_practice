@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "refund"
+    ],
+    "confidence": 0.95,
+    "evidence": "Нужно оформить возврат: вещь не подошла.",
+    "reason": "Заявка явно касается возврата некачественного товара.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 956,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 74,
+    "total_tokens": 1030
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

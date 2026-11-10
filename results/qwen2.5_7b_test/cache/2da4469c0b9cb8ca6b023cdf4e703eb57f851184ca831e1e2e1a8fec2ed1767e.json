@@ -1,0 +1,20 @@
+{
+  "result": {
+    "labels": [
+      "account"
+    ],
+    "confidence": 1,
+    "evidence": "Хочу полностью удалить свою учетную запись.",
+    "reason": "Клиент выражает намерение удалить свою учетную запись, что относится к проблеме с аккаунтом."
+  },
+  "usage": {
+    "prompt_tokens": 952,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 69,
+    "total_tokens": 1021
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

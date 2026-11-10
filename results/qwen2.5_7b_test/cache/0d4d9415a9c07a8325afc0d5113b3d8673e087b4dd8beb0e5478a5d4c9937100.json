@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "keep",
+    "proposed_label": "refund",
+    "confidence": 0.95,
+    "reason": "Текст ясно указывает на возврат, а соседние метки подтверждают это."
+  },
+  "usage": {
+    "prompt_tokens": 1292,
+    "prompt_tokens_details": {
+      "cached_tokens": 8
+    },
+    "completion_tokens": 52,
+    "total_tokens": 1344
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

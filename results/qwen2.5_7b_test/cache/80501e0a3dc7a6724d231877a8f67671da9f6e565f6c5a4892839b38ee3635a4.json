@@ -1,0 +1,22 @@
+{
+  "result": {
+    "labels": [
+      "account",
+      "technical"
+    ],
+    "confidence": 0.8,
+    "evidence": "Восстановление учетной записи не удается.",
+    "reason": "Проблема связана с входом в аккаунт и работой приложения.",
+    "needs_neighbors": true
+  },
+  "usage": {
+    "prompt_tokens": 951,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 71,
+    "total_tokens": 1022
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

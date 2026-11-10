@@ -1,0 +1,23 @@
+{
+  "result": {
+    "labels": [
+      [
+        "technical",
+        "refund"
+      ]
+    ],
+    "confidence": 0.8,
+    "evidence": "Приложение зависает; отдельно прошу вернуть деньги.",
+    "reason": "Зависание приложения соответствует классу technical, а запрос на возврат денег — классу refund. Проблемы не связаны с оплатой или доставкой, не требуют человека, и нет неоднозначности."
+  },
+  "usage": {
+    "prompt_tokens": 955,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 94,
+    "total_tokens": 1049
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "refund"
+    ],
+    "confidence": 0.9,
+    "evidence": "Жду возмещение, когда его перечислят?",
+    "reason": "Запрос содержит просьбу о возврате денег.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 954,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 65,
+    "total_tokens": 1019
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

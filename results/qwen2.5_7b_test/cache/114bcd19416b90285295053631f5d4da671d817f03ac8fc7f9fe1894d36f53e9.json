@@ -1,0 +1,22 @@
+{
+  "result": {
+    "labels": [
+      "account",
+      "delivery"
+    ],
+    "confidence": 0.9,
+    "evidence": "Смените номер в профиле и перенесите доставку.",
+    "reason": "Запрос содержит две независимые проблемы: изменение данных в аккаунте и изменение адреса доставки.",
+    "needs_neighbors": true
+  },
+  "usage": {
+    "prompt_tokens": 958,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 88,
+    "total_tokens": 1046
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,0 +1,20 @@
+{
+  "result": {
+    "conflict": true,
+    "neighbor_ids": [
+      "ac314374a2"
+    ],
+    "confidence": 0.8,
+    "reason": "Соседний текст с меткой 'delivery' противоречит основному тексту с меткой 'payment'."
+  },
+  "usage": {
+    "prompt_tokens": 1164,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 55,
+    "total_tokens": 1219
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

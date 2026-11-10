@@ -1,0 +1,20 @@
+{
+  "result": {
+    "labels": [
+      "account"
+    ],
+    "confidence": 1,
+    "evidence": "Не получается восстановить учетную запись.",
+    "reason": "Сообщение касается проблемы с входом в учетную запись."
+  },
+  "usage": {
+    "prompt_tokens": 951,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 56,
+    "total_tokens": 1007
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,0 +1,18 @@
+{
+  "result": {
+    "conflict": false,
+    "neighbor_ids": [],
+    "confidence": 0.8,
+    "reason": "Оба соседних текста описывают проблемы с оплатой, что согласуется с основным текстом."
+  },
+  "usage": {
+    "prompt_tokens": 1170,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 44,
+    "total_tokens": 1214
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

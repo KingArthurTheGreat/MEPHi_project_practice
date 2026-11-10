@@ -1,0 +1,18 @@
+{
+  "result": {
+    "conflict": false,
+    "neighbor_ids": [],
+    "confidence": 1,
+    "reason": "Все соседние тексты имеют метки, соответствующие описанным в правилах классам, и не противоречат исходной метке."
+  },
+  "usage": {
+    "prompt_tokens": 1173,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 53,
+    "total_tokens": 1226
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

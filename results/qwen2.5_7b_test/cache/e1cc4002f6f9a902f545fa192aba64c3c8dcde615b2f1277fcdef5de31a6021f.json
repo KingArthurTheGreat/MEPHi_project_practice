@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "review",
+    "proposed_label": null,
+    "confidence": 0.9,
+    "reason": "Соответствие классу 'technical' неоднозначно из-за отсутствия явных проблем с оплатой или доставкой."
+  },
+  "usage": {
+    "prompt_tokens": 1286,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 61,
+    "total_tokens": 1347
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

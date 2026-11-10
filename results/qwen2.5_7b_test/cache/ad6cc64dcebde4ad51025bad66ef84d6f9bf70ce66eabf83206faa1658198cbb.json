@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "technical"
+    ],
+    "confidence": 0.9,
+    "evidence": "В приложении слишком мелкий шрифт.",
+    "reason": "Заметка о слишком мелком шрифте относится к проблемам с работой приложения.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 952,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 74,
+    "total_tokens": 1026
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

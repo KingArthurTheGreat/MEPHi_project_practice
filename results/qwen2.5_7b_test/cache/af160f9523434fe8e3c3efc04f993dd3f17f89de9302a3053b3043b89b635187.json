@@ -1,0 +1,19 @@
+{
+  "result": {
+    "labels": [],
+    "confidence": 0.5,
+    "evidence": "Можно доставить посылку в пятницу?",
+    "reason": "Вопрос не содержит конкретной проблемы или запроса действия, не позволяет классифицировать в один из существующих классов.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 953,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 65,
+    "total_tokens": 1018
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

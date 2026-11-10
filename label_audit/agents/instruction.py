@@ -20,5 +20,6 @@ class InstructionAgent:
         else:
             response = {"issues": overlaps, "questions": []}
         return {"version": taxonomy["version"], "sha256": digest(taxonomy),
-                "classes": taxonomy["classes"], "rules": taxonomy["rules"], **response}
+                "classes": taxonomy["classes"], "rules": taxonomy["rules"],
+                "issues": response["issues"], "questions": response["questions"]}
 

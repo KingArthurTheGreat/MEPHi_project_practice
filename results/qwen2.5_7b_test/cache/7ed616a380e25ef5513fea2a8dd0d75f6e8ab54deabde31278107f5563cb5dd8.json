@@ -1,0 +1,18 @@
+{
+  "result": {
+    "labels": [],
+    "confidence": 0.5,
+    "evidence": "Хочу сотрудничать с вами как поставщик.",
+    "reason": "Заявка не содержит конкретной проблемы, а является просьбой о сотрудничестве."
+  },
+  "usage": {
+    "prompt_tokens": 954,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 52,
+    "total_tokens": 1006
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

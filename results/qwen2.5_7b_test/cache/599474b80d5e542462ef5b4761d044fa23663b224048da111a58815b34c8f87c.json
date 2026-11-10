@@ -1,0 +1,20 @@
+{
+  "result": {
+    "conflict": false,
+    "neighbor_ids": [
+      "789f9fc4f2"
+    ],
+    "confidence": 0.8,
+    "reason": "Соседний текст схож по теме, но содержит явное отрицание: \"Доставили красный товар, хотя нужен синий.\""
+  },
+  "usage": {
+    "prompt_tokens": 1166,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 65,
+    "total_tokens": 1231
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

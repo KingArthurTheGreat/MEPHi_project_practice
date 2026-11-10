@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "keep",
+    "proposed_label": "account",
+    "confidence": 0.8,
+    "reason": "Текст указывает на проблему с входом в аккаунт и профилированием."
+  },
+  "usage": {
+    "prompt_tokens": 1306,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 52,
+    "total_tokens": 1358
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

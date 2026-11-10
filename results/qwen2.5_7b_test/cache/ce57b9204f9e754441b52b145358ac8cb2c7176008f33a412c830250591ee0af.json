@@ -1,0 +1,22 @@
+{
+  "result": {
+    "labels": [
+      "technical",
+      "refund"
+    ],
+    "confidence": 0.95,
+    "evidence": "Верните деньги и исправьте зависание приложения.",
+    "reason": "Заявка содержит две независимые проблемы: технический сбой приложения и просьба вернуть деньги.",
+    "needs_neighbors": true
+  },
+  "usage": {
+    "prompt_tokens": 954,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 85,
+    "total_tokens": 1039
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

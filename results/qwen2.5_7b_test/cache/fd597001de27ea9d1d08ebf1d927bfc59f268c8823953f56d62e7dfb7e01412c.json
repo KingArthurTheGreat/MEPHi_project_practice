@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "review",
+    "proposed_label": null,
+    "confidence": 0.8,
+    "reason": "Текст и соседние метки не однозначно указывают на конкретную категорию, требует дополнительной проверки."
+  },
+  "usage": {
+    "prompt_tokens": 1350,
+    "prompt_tokens_details": {
+      "cached_tokens": 8
+    },
+    "completion_tokens": 57,
+    "total_tokens": 1407
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

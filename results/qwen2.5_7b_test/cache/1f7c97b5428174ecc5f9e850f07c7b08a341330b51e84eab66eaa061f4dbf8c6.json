@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "account"
+    ],
+    "confidence": 0.8,
+    "evidence": "Сбросить пароль по присланной ссылке нельзя.",
+    "reason": "Клиент затрагивает проблему с аккаунтом, а именно сброс пароля.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 954,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 57,
+    "total_tokens": 1011
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

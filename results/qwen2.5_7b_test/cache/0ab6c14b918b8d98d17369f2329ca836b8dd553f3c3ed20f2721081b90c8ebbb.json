@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "keep",
+    "proposed_label": "account",
+    "confidence": 1.0,
+    "reason": "Текст явно говорит о проблеме с входом или восстановлением учетной записи, что соответствует метке account."
+  },
+  "usage": {
+    "prompt_tokens": 1293,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 49,
+    "total_tokens": 1342
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

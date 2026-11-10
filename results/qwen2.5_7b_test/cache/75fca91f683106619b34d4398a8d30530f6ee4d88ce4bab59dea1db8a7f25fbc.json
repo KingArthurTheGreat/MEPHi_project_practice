@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "keep",
+    "proposed_label": "payment",
+    "confidence": 1.0,
+    "reason": "Текст явно описывает ошибку в процессе оплаты, что согласуется с меткой 'payment'."
+  },
+  "usage": {
+    "prompt_tokens": 1309,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 55,
+    "total_tokens": 1364
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

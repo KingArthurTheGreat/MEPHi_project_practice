@@ -1,0 +1,22 @@
+{
+  "result": {
+    "labels": [
+      "delivery",
+      "account"
+    ],
+    "confidence": 0.9,
+    "evidence": "Перенесите доставку; также нужно сменить телефон профиля.",
+    "reason": "Заказ связан с доставкой, а изменение телефона профиля относится к настройкам аккаунта.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 958,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 87,
+    "total_tokens": 1045
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

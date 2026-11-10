@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "technical"
+    ],
+    "confidence": 0.9,
+    "evidence": "Не могу дождаться загрузки страницы избранного.",
+    "reason": "Загрузка страницы относится к сбою приложения.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 956,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 54,
+    "total_tokens": 1010
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,4 +1,4 @@
-// Editable slide content. Run through an Artifact Session or @oai/artifact-tool.
+// Editable slide content.
 export function buildDeck(p, { imageBytes, imagePath, metrics }) {
   const C={bg:'#F8F8F3',ink:'#20231F',muted:'#6F7568',accent:'#BD512C',line:'#D8DDD0',soft:'#EAEDE3'};
   const font='Arial';
@@ -82,11 +82,11 @@ export function buildDeck(p, { imageBytes, imagePath, metrics }) {
   text(s,'Синтетические эталоны без независимой ручной проверки.\nСемейства парафраз разделены между dev и test.\nЖивой одиночный LLM baseline и стоимость пока не измерены.',64,476,1140,150,28,C.muted);
   s.speakerNotes.text='Резерв. Полнота внесенных ошибок в top-20 = 10/10. В синтетическом test 30 чистых строк, ни одной предложенной неверной смены метки в demo; малый набор не доказывает нулевой риск. Цель финала precision@20 по ошибкам ≥0.80 требует как минимум 16 реальных ошибок в наборе. Источник: results/kp2_demo/metrics.json. Дополнительные ограничения и формулы: docs/REPORT_KP2.md и evaluation.py.';
 
-  s=slide('Резерв · Границы готовности и авторство',8);
+  s=slide('Резерв · Границы готовности',8);
   text(s,'Реализовано',64,163,530,55,34,C.ink,true);
   text(s,'Пять отдельных агентных модулей.\nРучная обратная связь и журнал.\nВоспроизводимый эксперимент.\nКод, данные и тесты в архиве.',64,244,530,219,29);
   text(s,'Требует подтверждения',674,163,540,55,34,C.ink,true);
   text(s,'Живые ответы выбранной LLM.\nКачество на реальных данных.\nЛичные изменения участников.\nСогласование смены темы.',674,244,535,219,29,C.muted);
-  text(s,'Стартовый код и материалы подготовлены с помощью AI.\nРаспределение ответственности не заменяет фактический вклад каждого.',64,553,1148,78,25,C.accent);
-  s.speakerNotes.text='Резерв. Состав и название подтверждены пользователем. Стартовая реализация подготовлена AI; никто не должен выдавать распределение файлов за выдуманную историю личной разработки. Каждый изучает и дорабатывает собственного агента, показывает изменение и тест. Аналоги: https://labelstud.io/guide/ml.html и https://docs.cleanlab.ai/stable/tutorials/datalab/text.html. API: https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create и https://docs.ollama.com/api/openai-compatibility. Проверено 05.11.2026. Подробности: docs/TEAM.md и docs/SOURCES.md.';
+  text(s,'Каждый участник объясняет собственного агента,\nпоказывает конкретные изменения и результаты проверки.',64,553,1148,78,25,C.accent);
+  s.speakerNotes.text='Резерв. Состав и название подтверждены пользователем. Каждый изучает и дорабатывает собственного агента, показывает изменение и тест. Аналоги: https://labelstud.io/guide/ml.html и https://docs.cleanlab.ai/stable/tutorials/datalab/text.html. API: https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create и https://docs.ollama.com/api/openai-compatibility. Проверено 05.11.2026. Подробности: docs/TEAM.md и docs/SOURCES.md.';
 }

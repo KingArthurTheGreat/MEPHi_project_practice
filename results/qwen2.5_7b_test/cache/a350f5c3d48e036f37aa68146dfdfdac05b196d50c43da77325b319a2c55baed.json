@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "delivery"
+    ],
+    "confidence": 0.8,
+    "evidence": "У чужой двери курьер оставил мой пакет.",
+    "reason": "Текст упоминает курьера и пакет, что относится к доставке.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 957,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 80,
+    "total_tokens": 1037
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "technical"
+    ],
+    "confidence": 1,
+    "evidence": "Фильтры приложения перестали реагировать.",
+    "reason": "Заявка описывает сбой функционала приложения без указания конкретной операции или возврата.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 953,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 75,
+    "total_tokens": 1028
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "change",
+    "proposed_label": "delivery",
+    "confidence": 0.9,
+    "reason": "Текст целиком связан с доставкой, а не с аккаунтом."
+  },
+  "usage": {
+    "prompt_tokens": 1312,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 48,
+    "total_tokens": 1360
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

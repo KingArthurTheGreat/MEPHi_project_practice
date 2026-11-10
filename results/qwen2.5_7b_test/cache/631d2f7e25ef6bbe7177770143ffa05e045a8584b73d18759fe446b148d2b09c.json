@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "keep",
+    "proposed_label": "account",
+    "confidence": 0.8,
+    "reason": "Текст явно требует удаления аккаунта, что подтверждается классификацией."
+  },
+  "usage": {
+    "prompt_tokens": 1283,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 43,
+    "total_tokens": 1326
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

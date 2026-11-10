@@ -1,3 +1,6 @@
+from ..provider import InvalidModelResponse
+
+
 class QueueAgent:
     """Owner proposal: Курилов Максим. Tool: budgeted selection and feedback routing."""
     name = "queue"
@@ -27,18 +30,27 @@ class QueueAgent:
         if provider.mode == "llm" and ranked:
             compact = [{"id": x["id"], "text": x["text"], "decision": x["decision"],
                         "conflict_ids": x["consistency"]["neighbor_ids"]} for x in ranked[:80]]
-            result = provider.ask(self.name, {"candidates": compact, "budget": budget,
-                                  "reviewed_ids": sorted(reviewed), "related_ids": sorted(related)})
+            response_issue = None
+            selection_size = min(budget, len(compact))
+            try:
+                result = provider.ask(self.name, {"candidates": compact, "budget": budget,
+                                      "selection_size": selection_size,
+                                      "reviewed_ids": sorted(reviewed), "related_ids": sorted(related)})
+            except InvalidModelResponse as exc:
+                # Classification is already complete. Only queue ordering uses the local fallback.
+                result = None
+                response_issue = str(exc)
             ids = result.get("selected_ids") if isinstance(result, dict) else None
             allowed = {x["id"] for x in compact}
-            valid_answer = (isinstance(ids, list) and ids and len(ids) <= budget
+            valid_answer = (isinstance(ids, list) and len(ids) == selection_size
                             and all(isinstance(x, str) and x in allowed for x in ids)
                             and len(ids) == len(set(ids)) and isinstance(result.get("reason"), str))
             if valid_answer:
                 reason = result["reason"]
             else:
                 ids = local_selection()
-                reason = "Ответ агента очереди не прошёл проверку; применена локальная очередь из допустимых строк."
+                reason = ((response_issue + " ") if response_issue else "Ответ агента очереди не прошёл проверку. ")
+                reason += "Применена локальная очередь из допустимых строк; решения проверяющих агентов сохранены."
         else:
             ids = local_selection()
             reason = "Сначала вероятные ошибки и затронутые решением группы; почти дубликаты отложены ради покрытия."

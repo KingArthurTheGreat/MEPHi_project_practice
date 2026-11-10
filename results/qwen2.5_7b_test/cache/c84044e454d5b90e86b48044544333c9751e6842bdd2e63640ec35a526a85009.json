@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "keep",
+    "proposed_label": "technical",
+    "confidence": 0.8,
+    "reason": "Текст описывает проблему с приложением, а не с оплатой или другими темами."
+  },
+  "usage": {
+    "prompt_tokens": 1312,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 52,
+    "total_tokens": 1364
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

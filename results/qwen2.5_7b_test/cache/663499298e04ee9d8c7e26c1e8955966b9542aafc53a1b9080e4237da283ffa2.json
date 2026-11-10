@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "keep",
+    "proposed_label": "technical",
+    "confidence": 0.95,
+    "reason": "Текст соответствует определению технической проблемы, и уверенность в метке высока."
+  },
+  "usage": {
+    "prompt_tokens": 1280,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 52,
+    "total_tokens": 1332
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "recheck",
+    "proposed_label": null,
+    "confidence": 0.9,
+    "reason": "Согласие соседних меток не доказывает их правильность. Нехватает дополнительной информации для однозначного определения класса."
+  },
+  "usage": {
+    "prompt_tokens": 1294,
+    "prompt_tokens_details": {
+      "cached_tokens": 8
+    },
+    "completion_tokens": 64,
+    "total_tokens": 1358
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

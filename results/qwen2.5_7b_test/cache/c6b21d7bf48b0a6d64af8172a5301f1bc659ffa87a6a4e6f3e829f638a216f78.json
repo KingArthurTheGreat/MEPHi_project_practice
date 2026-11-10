@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "delivery"
+    ],
+    "confidence": 0.95,
+    "evidence": "Хочу перенести доставку на пятницу.",
+    "reason": "Запрос явно касается изменения даты доставки.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 954,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 68,
+    "total_tokens": 1022
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

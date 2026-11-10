@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "account"
+    ],
+    "confidence": 0.8,
+    "evidence": "Прошу удалить мой аккаунт.",
+    "reason": "Текст прямо требует удаления аккаунта, что соответствует классификации аккаунта.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 950,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 71,
+    "total_tokens": 1021
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

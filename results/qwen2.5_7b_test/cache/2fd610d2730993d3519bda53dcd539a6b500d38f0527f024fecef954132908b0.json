@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "account"
+    ],
+    "confidence": 0.9,
+    "evidence": "Вошел и увидел профиль другого человека.",
+    "reason": "Встречается ключевое слово 'профиль', что соответствует классу 'Аккаунт'.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 954,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 78,
+    "total_tokens": 1032
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}
