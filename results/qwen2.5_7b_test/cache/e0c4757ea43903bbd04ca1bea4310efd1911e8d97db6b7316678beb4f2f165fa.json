@@ -1,0 +1,18 @@
+{
+  "result": {
+    "conflict": false,
+    "neighbor_ids": [],
+    "confidence": 0.9,
+    "reason": "Все соседние тексты имеют метку 'payment', что согласуется с исходным текстом."
+  },
+  "usage": {
+    "prompt_tokens": 1171,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 42,
+    "total_tokens": 1213
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

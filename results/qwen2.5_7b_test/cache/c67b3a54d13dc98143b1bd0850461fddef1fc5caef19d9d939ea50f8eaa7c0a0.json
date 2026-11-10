@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "refund"
+    ],
+    "confidence": 1,
+    "evidence": "Как оформить возврат неподошедшей вещи?",
+    "reason": "Текст явно касается возврата товара, что соответствует определению класса refund.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 955,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 75,
+    "total_tokens": 1030
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

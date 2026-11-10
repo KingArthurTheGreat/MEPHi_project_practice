@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "account"
+    ],
+    "confidence": 0.8,
+    "evidence": "Ссылка для сброса пароля уже недействительна.",
+    "reason": "Сообщение касается пароля, который связан с учетной записью.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 955,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 70,
+    "total_tokens": 1025
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

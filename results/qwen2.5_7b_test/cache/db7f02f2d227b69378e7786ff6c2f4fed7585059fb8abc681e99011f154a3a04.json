@@ -1,0 +1,20 @@
+{
+  "result": {
+    "conflict": false,
+    "neighbor_ids": [
+      "0110fb9462"
+    ],
+    "confidence": 0.8,
+    "reason": "Соседний текст схож по содержанию и метке, не противоречит основному тексту."
+  },
+  "usage": {
+    "prompt_tokens": 1169,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 53,
+    "total_tokens": 1222
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,0 +1,19 @@
+{
+  "result": {
+    "labels": [],
+    "confidence": 0.5,
+    "evidence": "Заказ отмечен полученным, но я его не забирал.",
+    "reason": "Проблема связана как с получением заказа, так и с его отсутствием при заборе, что не соответствует одному классу.",
+    "needs_neighbors": true
+  },
+  "usage": {
+    "prompt_tokens": 957,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 74,
+    "total_tokens": 1031
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

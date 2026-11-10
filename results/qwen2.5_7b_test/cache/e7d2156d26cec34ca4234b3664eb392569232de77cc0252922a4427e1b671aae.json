@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "review",
+    "proposed_label": null,
+    "confidence": 0.5,
+    "reason": "Текст содержит несколько нерешенных вопросов, не позволяет выбрать единственный класс с уверенностью."
+  },
+  "usage": {
+    "prompt_tokens": 1325,
+    "prompt_tokens_details": {
+      "cached_tokens": 8
+    },
+    "completion_tokens": 49,
+    "total_tokens": 1374
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

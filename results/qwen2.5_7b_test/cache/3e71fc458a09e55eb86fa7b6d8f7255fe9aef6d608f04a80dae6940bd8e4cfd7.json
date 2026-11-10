@@ -1,0 +1,19 @@
+{
+  "result": {
+    "labels": [],
+    "confidence": 0.5,
+    "evidence": "Доставили красный товар, хотя нужен синий.",
+    "reason": "Заявление содержит два отдельных нерешенных вопроса: неверный цвет товара и ошибка доставки. Не хватает данных для точной классификации.",
+    "needs_neighbors": true
+  },
+  "usage": {
+    "prompt_tokens": 955,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 78,
+    "total_tokens": 1033
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

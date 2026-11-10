@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "account"
+    ],
+    "confidence": 0.8,
+    "evidence": "После входа открывается чужой профиль.",
+    "reason": "Вход в аккаунт привел к отображению чужого профиля, что может указывать на проблему с авторизацией.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 954,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 70,
+    "total_tokens": 1024
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

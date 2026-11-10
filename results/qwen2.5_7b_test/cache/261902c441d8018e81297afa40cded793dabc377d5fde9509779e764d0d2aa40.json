@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "change",
+    "proposed_label": "delivery",
+    "confidence": 0.9,
+    "reason": "Текст упоминает курьера и пакет, что явно указывает на процесс доставки."
+  },
+  "usage": {
+    "prompt_tokens": 1304,
+    "prompt_tokens_details": {
+      "cached_tokens": 8
+    },
+    "completion_tokens": 56,
+    "total_tokens": 1360
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

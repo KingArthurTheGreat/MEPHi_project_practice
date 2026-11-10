@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "change",
+    "proposed_label": "account",
+    "confidence": 0.9,
+    "reason": "Текст явно связан с удалением учетной записи, что согласуется с текущей меткой."
+  },
+  "usage": {
+    "prompt_tokens": 1283,
+    "prompt_tokens_details": {
+      "cached_tokens": 8
+    },
+    "completion_tokens": 50,
+    "total_tokens": 1333
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

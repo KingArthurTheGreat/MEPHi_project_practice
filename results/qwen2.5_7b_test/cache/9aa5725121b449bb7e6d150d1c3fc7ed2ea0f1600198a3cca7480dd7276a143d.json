@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "refund"
+    ],
+    "confidence": 1,
+    "evidence": "Без объяснений отклонили мой возврат.",
+    "reason": "Текст явно говорит о возврате, который был отклонен.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 953,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 66,
+    "total_tokens": 1019
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

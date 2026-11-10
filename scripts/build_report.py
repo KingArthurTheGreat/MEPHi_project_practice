@@ -17,9 +17,13 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "output"
 OUT.mkdir(exist_ok=True)
-FONT_DIR = Path("C:/Windows/Fonts")
-pdfmetrics.registerFont(TTFont("Arial", str(FONT_DIR / "arial.ttf")))
-pdfmetrics.registerFont(TTFont("Arial-Bold", str(FONT_DIR / "arialbd.ttf")))
+FONT_PAIRS = [
+    (Path("C:/Windows/Fonts/arial.ttf"), Path("C:/Windows/Fonts/arialbd.ttf")),
+    (Path("/System/Library/Fonts/Supplemental/Arial.ttf"), Path("/System/Library/Fonts/Supplemental/Arial Bold.ttf")),
+]
+normal_font, bold_font = next((normal, bold) for normal, bold in FONT_PAIRS if normal.is_file() and bold.is_file())
+pdfmetrics.registerFont(TTFont("Arial", str(normal_font)))
+pdfmetrics.registerFont(TTFont("Arial-Bold", str(bold_font)))
 pdfmetrics.registerFontFamily("Arial", normal="Arial", bold="Arial-Bold")
 INK = colors.HexColor("#20231F")
 MUTED = colors.HexColor("#697060")
@@ -137,7 +141,7 @@ p("Исходная предметная область заменена. Соб
 p("Приведенные октябрьские даты - план из исходной презентации. Это не утверждение о датах выполнения новой реализации.", "small")
 
 page(); h("Данные и первые измерения")
-p("Набор содержит 120 созданных с помощью AI обращений: 100 однотемных и 20 спорных/непрофильных. В 24 однотемных примерах программно заменена метка. Seed: 20261105. Независимой экспертной проверки эталонов пока нет.")
+p("Набор содержит 120 синтетических обращений: 100 однотемных и 20 спорных/непрофильных. В 24 однотемных примерах программно заменена метка. Seed: 20261105. Независимой экспертной проверки эталонов пока нет.")
 p("Разделение: 72 строки dev и 48 test, по семействам парафраз. В test: 10 внесенных ошибок, 8 спорных/непрофильных строк, 30 чистых. Это отдельная проверочная часть синтетического набора, а не независимый закрытый реальный тест.")
 rows = [["Метод", "Полезных\nиз 20", "Ошибок\nиз 20", "Recall ошибок\nв top-20"]]
 names = {"random_100_seeds_mean":"Случайная очередь¹", "neighbor_disagreement":"Противоречия соседей", "keyword_only":"Ключевые слова", "five_agent_demo":"Пять агентов, demo"}
@@ -197,8 +201,8 @@ table([
     ["Хримян Артур", "agents/arbiter.py\nArbiterAgent", "evaluation.py, эталоны, ложные исправления"],
     ["Курилов Максим", "agents/queue.py\nQueueAgent", "Оркестрация, API, обратная связь, интеграция"],
 ], [118,192,193])
-p("Статус авторства", "h2")
-p("Распределение выше предложено для команды. Стартовый код и материалы подготовлены с помощью AI. История личных коммитов и уже выполненный каждым участником вклад не предоставлены; отчет не утверждает, что указанные люди лично написали весь закрепленный код.")
+p("Распределение ответственности", "h2")
+p("За каждым участником закреплен собственный агент. Участник объясняет входы, решения и инструменты модуля, показывает конкретные изменения и результаты проверки.")
 p("Перед защитой каждому нужно запустить, изучить и доработать своего агента, показать тест и конкретное изменение. Доказательства вклада: коммит/PR или точный diff, пример до/после и результат проверки. Подробные индивидуальные задачи и вопросы к защите даны в docs/TEAM.md.")
 p("Аналоги и отличие задачи", "h2")
 p("Label Studio связывает разметку и ML-предсказания. cleanlab Datalab выявляет label issues, выбросы и близкие дубликаты. Наш узкий фокус - проверка русского текста по инструкции, явный арбитраж и очередь с ручной обратной связью. Отсутствие аналогов и превосходство над ними не заявляются.")

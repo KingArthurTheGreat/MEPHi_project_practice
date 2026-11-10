@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "review",
+    "proposed_label": null,
+    "confidence": 0.5,
+    "reason": "Вопрос не содержит конкретной проблемы или запроса действия, не позволяет классифицировать в один из существующих классов."
+  },
+  "usage": {
+    "prompt_tokens": 1301,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 57,
+    "total_tokens": 1358
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

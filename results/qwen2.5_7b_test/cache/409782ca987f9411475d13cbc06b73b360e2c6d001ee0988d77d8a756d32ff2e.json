@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "review",
+    "proposed_label": null,
+    "confidence": 0.5,
+    "reason": "Текст запроса не четко соответствует одному классу, требует более детальной проверки."
+  },
+  "usage": {
+    "prompt_tokens": 1276,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 44,
+    "total_tokens": 1320
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

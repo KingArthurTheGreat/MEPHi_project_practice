@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "keep",
+    "proposed_label": "refund",
+    "confidence": 0.9,
+    "reason": "Текст запроса явно связан с просьбой о возврате денег, что соответствует определению класса refund."
+  },
+  "usage": {
+    "prompt_tokens": 1276,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 57,
+    "total_tokens": 1333
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,0 +1,18 @@
+{
+  "result": {
+    "labels": [],
+    "confidence": 0,
+    "evidence": "Сумма списания больше цены при оплате.",
+    "reason": "Нехватает информации для классификации."
+  },
+  "usage": {
+    "prompt_tokens": 952,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 36,
+    "total_tokens": 988
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

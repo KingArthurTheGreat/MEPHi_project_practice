@@ -1,0 +1,19 @@
+{
+  "result": {
+    "labels": [],
+    "confidence": 0.5,
+    "evidence": "Есть ли у вас работа для студентов?",
+    "reason": "Вопрос не содержит ключевых слов для существующих меток и не указывает на проблему.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 950,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 67,
+    "total_tokens": 1017
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

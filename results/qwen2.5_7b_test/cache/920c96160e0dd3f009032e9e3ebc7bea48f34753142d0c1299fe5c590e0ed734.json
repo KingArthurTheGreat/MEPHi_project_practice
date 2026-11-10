@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "recheck",
+    "proposed_label": "account",
+    "confidence": 0.9,
+    "reason": "Текст явно касается проблемы с аккаунтом, и соседние метки поддерживают эту тему."
+  },
+  "usage": {
+    "prompt_tokens": 1290,
+    "prompt_tokens_details": {
+      "cached_tokens": 8
+    },
+    "completion_tokens": 48,
+    "total_tokens": 1338
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

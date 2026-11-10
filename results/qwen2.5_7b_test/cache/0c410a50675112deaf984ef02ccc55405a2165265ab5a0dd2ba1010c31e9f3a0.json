@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "review",
+    "proposed_label": null,
+    "confidence": 0.8,
+    "reason": "Соседний текст с меткой 'delivery' противоречит основному тексту с меткой 'payment', требует дополнительной проверки."
+  },
+  "usage": {
+    "prompt_tokens": 1311,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 60,
+    "total_tokens": 1371
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

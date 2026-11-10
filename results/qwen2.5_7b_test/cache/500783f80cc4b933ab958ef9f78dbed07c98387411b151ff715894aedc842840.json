@@ -1,0 +1,22 @@
+{
+  "result": {
+    "labels": [
+      "delivery",
+      "refund"
+    ],
+    "confidence": 0.8,
+    "evidence": "Вместо синего товара доставили красный.",
+    "reason": "Заказ доставили неправильный товар, что относится к доставке и возврату.",
+    "needs_neighbors": true
+  },
+  "usage": {
+    "prompt_tokens": 954,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 81,
+    "total_tokens": 1035
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "review",
+    "proposed_label": "account",
+    "confidence": 0.8,
+    "reason": "Соседние тексты включают как проблемы с аккаунтом, так и технические сбои, что требует дополнительной проверки."
+  },
+  "usage": {
+    "prompt_tokens": 1284,
+    "prompt_tokens_details": {
+      "cached_tokens": 8
+    },
+    "completion_tokens": 64,
+    "total_tokens": 1348
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

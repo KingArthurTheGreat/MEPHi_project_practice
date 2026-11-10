@@ -1,0 +1,18 @@
+{
+  "result": {
+    "conflict": false,
+    "neighbor_ids": [],
+    "confidence": 0.8,
+    "reason": "Соседние метки technical и refund не противоречат исходной метке account."
+  },
+  "usage": {
+    "prompt_tokens": 1166,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 41,
+    "total_tokens": 1207
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

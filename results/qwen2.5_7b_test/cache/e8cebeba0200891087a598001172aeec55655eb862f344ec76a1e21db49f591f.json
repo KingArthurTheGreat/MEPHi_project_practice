@@ -1,0 +1,19 @@
+{
+  "result": {
+    "labels": [],
+    "confidence": 0.5,
+    "evidence": "Покупка оформлена случайно, прошу отменить.",
+    "reason": "Запрос содержит просьбу отменить покупку, но не хватает информации о том, есть ли проблема с оплатой или это просто случайное действие клиента.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 956,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 76,
+    "total_tokens": 1032
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

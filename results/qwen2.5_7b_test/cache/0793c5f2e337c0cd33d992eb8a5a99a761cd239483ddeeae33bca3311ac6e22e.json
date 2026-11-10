@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "change",
+    "proposed_label": "technical",
+    "confidence": 0.9,
+    "reason": "Текст связан с сбоем приложения, а не с доставкой."
+  },
+  "usage": {
+    "prompt_tokens": 1298,
+    "prompt_tokens_details": {
+      "cached_tokens": 8
+    },
+    "completion_tokens": 46,
+    "total_tokens": 1344
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

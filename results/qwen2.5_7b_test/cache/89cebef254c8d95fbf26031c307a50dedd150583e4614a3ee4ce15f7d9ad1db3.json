@@ -1,0 +1,19 @@
+{
+  "result": {
+    "labels": [],
+    "confidence": 0.5,
+    "evidence": "Пришлите чек за последнюю покупку.",
+    "reason": "Текст не содержит явных указаний на оплату, возврат или проблемы с доставкой. Не хватает данных для однозначной классификации.",
+    "needs_neighbors": true
+  },
+  "usage": {
+    "prompt_tokens": 953,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 88,
+    "total_tokens": 1041
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

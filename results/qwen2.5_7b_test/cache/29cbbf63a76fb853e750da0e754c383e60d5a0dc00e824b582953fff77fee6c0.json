@@ -1,0 +1,20 @@
+{
+  "result": {
+    "conflict": false,
+    "neighbor_ids": [
+      "9c7874381b"
+    ],
+    "confidence": 0.8,
+    "reason": "Соседний текст с меткой account поддерживает основной текст."
+  },
+  "usage": {
+    "prompt_tokens": 1177,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 46,
+    "total_tokens": 1223
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "technical"
+    ],
+    "confidence": 0.8,
+    "evidence": "Шрифт приложения невозможно прочитать.",
+    "reason": "Задача связана с работой приложения, а не с оплатой, доставкой или другими проблемами.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 950,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 74,
+    "total_tokens": 1024
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

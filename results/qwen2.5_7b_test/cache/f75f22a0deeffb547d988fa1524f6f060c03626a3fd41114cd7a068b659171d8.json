@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "change",
+    "proposed_label": "account",
+    "confidence": 0.9,
+    "reason": "Текст упоминает 'профиль', что соответствует классу 'Аккаунт'. Другие классы не соответствуют контексту."
+  },
+  "usage": {
+    "prompt_tokens": 1304,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 66,
+    "total_tokens": 1370
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

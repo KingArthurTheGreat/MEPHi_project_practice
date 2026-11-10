@@ -1,0 +1,21 @@
+{
+  "result": {
+    "labels": [
+      "technical"
+    ],
+    "confidence": 0.95,
+    "evidence": "приложение вылетает",
+    "reason": "Пользователь описывает сбой приложения, что соответствует определению технической проблемы.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 952,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 67,
+    "total_tokens": 1019
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

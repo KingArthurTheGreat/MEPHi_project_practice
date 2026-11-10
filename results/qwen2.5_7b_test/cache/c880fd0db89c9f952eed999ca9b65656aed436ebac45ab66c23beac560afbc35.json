@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "change",
+    "proposed_label": "technical",
+    "confidence": 0.8,
+    "reason": "Текст связан с работой приложения, а не с оплатой или доставкой."
+  },
+  "usage": {
+    "prompt_tokens": 1286,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 49,
+    "total_tokens": 1335
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

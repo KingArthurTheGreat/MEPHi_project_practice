@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "change",
+    "proposed_label": "technical",
+    "confidence": 0.95,
+    "reason": "Текст содержит две независимые проблемы, но главная из них — сбой приложения, что соответствует классу technical."
+  },
+  "usage": {
+    "prompt_tokens": 1327,
+    "prompt_tokens_details": {
+      "cached_tokens": 8
+    },
+    "completion_tokens": 60,
+    "total_tokens": 1387
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

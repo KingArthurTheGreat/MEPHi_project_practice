@@ -1,0 +1,18 @@
+{
+  "result": {
+    "action": "keep",
+    "proposed_label": "payment",
+    "confidence": 0.95,
+    "reason": "Текст явно описывает проблему с оплатой, что соответствует классу payment."
+  },
+  "usage": {
+    "prompt_tokens": 1294,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 51,
+    "total_tokens": 1345
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

@@ -80,7 +80,7 @@ def evaluate_project(root: Path, out_dir: Path, mode="demo", split="test", k=20,
     single_label = "keyword_only" if mode == "demo" else "semantic_ablation"
     metrics = {"scope": "synthetic_pipeline_check", "mode": mode, "split": split, "seed": 20261105,
                "data_sha256": result["data_sha256"], "taxonomy_sha256": result["spec"]["sha256"],
-               "disclosure": "Синтетический набор, созданный с помощью AI; эталоны не проверены независимыми разметчиками. Это проверка прототипа, не оценка качества на реальных данных.",
+               "disclosure": "Синтетический набор; эталоны не проверены независимыми разметчиками. Это проверка прототипа, не оценка качества на реальных данных.",
                "methods": {"random_100_seeds_mean": random_summary,
                            "neighbor_disagreement": evaluate_ranking(neighbor_order, gold, {}, k),
                            single_label: evaluate_ranking(semantic_order, gold, semantic_actions, k),

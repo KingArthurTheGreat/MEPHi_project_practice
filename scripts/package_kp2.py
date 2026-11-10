@@ -6,9 +6,9 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE = ROOT / "output/KP2_edinaya_rossiya.zip"
-FILES = ["README.md", "pyproject.toml", ".gitignore", ".env.example", "START_DEMO.bat", "REPRODUCE.bat"]
+FILES = ["README.md", "pyproject.toml", ".gitignore", ".gitattributes", ".env.example", "START_DEMO.bat", "REPRODUCE.bat"]
 DIRECTORIES = ["label_audit", "data", "evaluation", "tests", "docs", "scripts", "results", ".github"]
-OUTPUTS = ["output/KP2_report.pdf", "output/KP2_presentation.pptx", "output/KP2_presentation.pdf", "output/START_HERE.txt"]
+OUTPUTS = ["output/KP2_report.pdf", "output/KP2_presentation.pptx", "output/KP2_presentation_updated.pptx", "output/KP2_presentation.pdf", "output/START_HERE.txt"]
 
 
 def package():

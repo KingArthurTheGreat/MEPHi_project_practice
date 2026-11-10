@@ -1,0 +1,19 @@
+{
+  "result": {
+    "labels": [],
+    "confidence": 0.5,
+    "evidence": "Как стать вашим поставщиком?",
+    "reason": "Текст не содержит информации о проблемах или запросах по существующим категориям.",
+    "needs_neighbors": false
+  },
+  "usage": {
+    "prompt_tokens": 949,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 51,
+    "total_tokens": 1000
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}

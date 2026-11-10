@@ -1,0 +1,1432 @@
+[
+  {
+    "id": "98ab608d4c59",
+    "family": "new-delivery-13",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "fab198147716",
+    "family": "new-refund-18",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "ff03f937abd4",
+    "family": "new-delivery-5",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "ab96119a92ee",
+    "family": "new-technical-16",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "7dc7cf51bac3",
+    "family": "new-account-8",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "2911018d7ce2",
+    "family": "new-payment-6",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "c25bfc23a089",
+    "family": "new-technical-13",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "c0a93911a7f0",
+    "family": "new-multi-7",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund",
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "multi_topic",
+    "expected_action": "review"
+  },
+  {
+    "id": "36778982b9c9",
+    "family": "new-refund-13",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "49f125120e8f",
+    "family": "new-refund-9",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "6f4796ff0c02",
+    "family": "new-uncertain-9",
+    "split": "challenge",
+    "acceptable_labels": [],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "out_of_scope",
+    "expected_action": "review"
+  },
+  {
+    "id": "c45f839e34b3",
+    "family": "new-delivery-6",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "3b9bbde7a267",
+    "family": "new-multi-8",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account",
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "multi_topic",
+    "expected_action": "review"
+  },
+  {
+    "id": "1cd8a5dd77ba",
+    "family": "new-uncertain-7",
+    "split": "challenge",
+    "acceptable_labels": [],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "out_of_scope",
+    "expected_action": "review"
+  },
+  {
+    "id": "c9c29084cfeb",
+    "family": "new-account-6",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "03a157397bfb",
+    "family": "new-delivery-19",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "2466f9e62efe",
+    "family": "new-account-14",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "b47ca046a5e5",
+    "family": "new-refund-7",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "2d838b77886e",
+    "family": "new-payment-16",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "c3a69740ecc9",
+    "family": "new-refund-10",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "f3b8ad568cc9",
+    "family": "new-account-18",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "4b4819becdb5",
+    "family": "new-account-5",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "466768f6b560",
+    "family": "new-delivery-0",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "c25ea9abf6be",
+    "family": "new-technical-15",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "03cc2bb921f1",
+    "family": "new-uncertain-2",
+    "split": "challenge",
+    "acceptable_labels": [],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "insufficient_context",
+    "expected_action": "review"
+  },
+  {
+    "id": "49b64e2d042d",
+    "family": "new-payment-18",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "2d9db6d3c892",
+    "family": "new-delivery-2",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "d74c2513a29e",
+    "family": "new-payment-15",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "f1696dfaa33a",
+    "family": "new-technical-3",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "af13df078837",
+    "family": "new-account-15",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "4fbdd87bed82",
+    "family": "new-multi-9",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund",
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "multi_topic",
+    "expected_action": "review"
+  },
+  {
+    "id": "3edf42140931",
+    "family": "new-technical-17",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "434622cd636d",
+    "family": "new-uncertain-8",
+    "split": "challenge",
+    "acceptable_labels": [],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "out_of_scope",
+    "expected_action": "review"
+  },
+  {
+    "id": "3c7a7a74e8b0",
+    "family": "new-technical-5",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "2c915610202c",
+    "family": "new-refund-17",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "88a72cb2ffe6",
+    "family": "new-delivery-12",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "c210bd81e667",
+    "family": "new-technical-2",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "e75a84e2b16d",
+    "family": "new-account-0",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "6e1c4cba29f1",
+    "family": "new-payment-3",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "a3392ff593b0",
+    "family": "new-refund-0",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "d3cb8b54b0cf",
+    "family": "new-account-13",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "7087274803f6",
+    "family": "new-payment-14",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "8d0f6332da48",
+    "family": "new-multi-6",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account",
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "multi_topic",
+    "expected_action": "review"
+  },
+  {
+    "id": "d652f7489967",
+    "family": "new-refund-15",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "6dd9c7da5613",
+    "family": "new-delivery-14",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "8c7c8b134787",
+    "family": "new-technical-10",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "2821771c742d",
+    "family": "new-technical-1",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "67b7a1bffddb",
+    "family": "new-multi-0",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account",
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "multi_topic",
+    "expected_action": "review"
+  },
+  {
+    "id": "e4b01767b2b8",
+    "family": "new-account-7",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "a54820bd6fba",
+    "family": "new-refund-16",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "2165f96e3830",
+    "family": "new-payment-11",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "5d9dcc935487",
+    "family": "new-account-10",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "c97131947b1f",
+    "family": "new-payment-13",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "53a797d8ec94",
+    "family": "new-technical-8",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "3604dd97e948",
+    "family": "new-refund-14",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "25ec165bc501",
+    "family": "new-delivery-17",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "553c44e63013",
+    "family": "new-refund-11",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "73df2cb9af6f",
+    "family": "new-delivery-7",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "12e90d10b677",
+    "family": "new-technical-4",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "4e6095f7080f",
+    "family": "new-account-3",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "0451b9136ef8",
+    "family": "new-refund-3",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "37640bdf9b52",
+    "family": "new-delivery-18",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "21e6a7babca4",
+    "family": "new-uncertain-3",
+    "split": "challenge",
+    "acceptable_labels": [],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "insufficient_context",
+    "expected_action": "review"
+  },
+  {
+    "id": "f5b624d96d27",
+    "family": "new-technical-19",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "b75caf98782c",
+    "family": "new-technical-9",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "427379303efa",
+    "family": "new-multi-5",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery",
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "multi_topic",
+    "expected_action": "review"
+  },
+  {
+    "id": "57fedff51a67",
+    "family": "new-delivery-11",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "8a83380b45d8",
+    "family": "new-delivery-8",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "dfea2d3b8ffa",
+    "family": "new-refund-5",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "ecf283475471",
+    "family": "new-payment-12",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "41c2f33f7d51",
+    "family": "new-refund-1",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "3a1fee6ec802",
+    "family": "new-refund-12",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "53201a30e81a",
+    "family": "new-account-17",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "8a016a9f0408",
+    "family": "new-payment-9",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "4893cb03de74",
+    "family": "new-uncertain-6",
+    "split": "challenge",
+    "acceptable_labels": [],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "out_of_scope",
+    "expected_action": "review"
+  },
+  {
+    "id": "1b9679dac485",
+    "family": "new-account-2",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "7ccb1293abe9",
+    "family": "new-technical-18",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "0c8e28974e2d",
+    "family": "new-multi-3",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund",
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "multi_topic",
+    "expected_action": "review"
+  },
+  {
+    "id": "f39250bd7871",
+    "family": "new-delivery-9",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "f6c2ccd0dd79",
+    "family": "new-technical-11",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "568bc9b8b53c",
+    "family": "new-technical-0",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "1cd4b12d0dd7",
+    "family": "new-payment-4",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "3a08955a8422",
+    "family": "new-account-11",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "9993bce0c659",
+    "family": "new-technical-12",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "413b1da8537f",
+    "family": "new-payment-19",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "c74c6f3cfb11",
+    "family": "new-technical-14",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "6e0cb75c2378",
+    "family": "new-technical-6",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "1a8cacb1106a",
+    "family": "new-delivery-10",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "9407688199f7",
+    "family": "new-payment-2",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "8ca2004f88f0",
+    "family": "new-refund-4",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "cd6994779c5c",
+    "family": "new-payment-8",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "ebb41aa1a8c0",
+    "family": "new-multi-4",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment",
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "multi_topic",
+    "expected_action": "review"
+  },
+  {
+    "id": "ef6828f40797",
+    "family": "new-payment-10",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "936564f8a7a7",
+    "family": "new-payment-17",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "29a3e05aeaff",
+    "family": "new-refund-19",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "b4eda0cdfae1",
+    "family": "new-refund-6",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "d7e48717143a",
+    "family": "new-uncertain-4",
+    "split": "challenge",
+    "acceptable_labels": [],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "insufficient_context",
+    "expected_action": "review"
+  },
+  {
+    "id": "3e710938e8cb",
+    "family": "new-uncertain-1",
+    "split": "challenge",
+    "acceptable_labels": [],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "insufficient_context",
+    "expected_action": "review"
+  },
+  {
+    "id": "cf1e205a451a",
+    "family": "new-payment-5",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "fa70c796f809",
+    "family": "new-payment-7",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "fad9ed30f7c9",
+    "family": "new-account-4",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "d69f478dc435",
+    "family": "new-refund-2",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "4d32161231aa",
+    "family": "new-technical-7",
+    "split": "challenge",
+    "acceptable_labels": [
+      "technical"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "6362c9b4d128",
+    "family": "new-delivery-3",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "8c185ea3cfa1",
+    "family": "new-account-12",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "3f50b6976c8f",
+    "family": "new-account-1",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "cecce10e90d7",
+    "family": "new-delivery-16",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "1a47503e5306",
+    "family": "new-multi-2",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account",
+      "refund"
+    ],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "multi_topic",
+    "expected_action": "review"
+  },
+  {
+    "id": "8321b7ab34d9",
+    "family": "new-payment-0",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "3a377a728d9d",
+    "family": "new-delivery-15",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "c111cd8c0d5c",
+    "family": "new-uncertain-5",
+    "split": "challenge",
+    "acceptable_labels": [],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "insufficient_context",
+    "expected_action": "review"
+  },
+  {
+    "id": "a8ea5eaaa542",
+    "family": "new-payment-1",
+    "split": "challenge",
+    "acceptable_labels": [
+      "payment"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "f9fa92e7fed2",
+    "family": "new-account-16",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "e13ca4cea94a",
+    "family": "new-delivery-4",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "c457f7a311c7",
+    "family": "new-account-19",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "392d339ebc35",
+    "family": "new-refund-8",
+    "split": "challenge",
+    "acceptable_labels": [
+      "refund"
+    ],
+    "is_label_error": true,
+    "needs_review": true,
+    "kind": "injected_error",
+    "expected_action": "change"
+  },
+  {
+    "id": "a3e2b2c8f81c",
+    "family": "new-multi-1",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery",
+      "technical"
+    ],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "multi_topic",
+    "expected_action": "review"
+  },
+  {
+    "id": "6a964bc593cb",
+    "family": "new-delivery-1",
+    "split": "challenge",
+    "acceptable_labels": [
+      "delivery"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  },
+  {
+    "id": "e2bfabbf48e5",
+    "family": "new-uncertain-0",
+    "split": "challenge",
+    "acceptable_labels": [],
+    "is_label_error": false,
+    "needs_review": true,
+    "kind": "insufficient_context",
+    "expected_action": "review"
+  },
+  {
+    "id": "f652c46c3387",
+    "family": "new-account-9",
+    "split": "challenge",
+    "acceptable_labels": [
+      "account"
+    ],
+    "is_label_error": false,
+    "needs_review": false,
+    "kind": "single_topic",
+    "expected_action": "keep"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "result": {
+    "labels": [
+      "payment",
+      "technical"
+    ],
+    "confidence": 0.85,
+    "evidence": "Лимит карты достаточный, но ее отклоняют.",
+    "reason": "Проблема с оплатой связана с отклонением карты, что относится к payment. Также есть проблема с приложением, так как отклонение может быть связано с сбоем в процессе оплаты.",
+    "needs_neighbors": true
+  },
+  "usage": {
+    "prompt_tokens": 955,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "completion_tokens": 109,
+    "total_tokens": 1064
+  },
+  "model": "qwen2.5:7b",
+  "actual_model": "qwen2.5:7b"
+}
